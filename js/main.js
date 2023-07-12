@@ -59,6 +59,8 @@ btnGeneratorInput.addEventListener("click", function () {
                 boxFlowers.classList.toggle("bg-danger");
                 console.log("Hai perso")
                 alert("Hai Perso!")
+                alert(`Punteggio Totale: ${sumPoints}`)
+
                 //Bonus
                 //return così che quando faccio il click a una bomba si ferma e non va a sommare i punti
                 containerFlowers.style.zIndex = -1
@@ -74,6 +76,7 @@ btnGeneratorInput.addEventListener("click", function () {
                 containerFlowers.style.zIndex = -1;
 
                 alert("Hai Vinto!")
+                alert(`Punteggio Totale: ${sumPoints}`)
             }
         })
     }
