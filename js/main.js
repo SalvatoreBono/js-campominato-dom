@@ -12,6 +12,7 @@ const numberBlockGeneratorInput = document.getElementById("number-block");
 //L’utente clicca su un bottone
 const bombGenerator = [];
 btnGeneratorInput.addEventListener("click", function () {
+    containerFlowers.style.zIndex = 0;
     let sumPoints = 0;
     //Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
     const numberBlockGenerator = numberBlockGeneratorInput.value;
@@ -58,7 +59,9 @@ btnGeneratorInput.addEventListener("click", function () {
                 boxFlowers.classList.toggle("bg-danger");
                 console.log("Hai perso")
                 alert("Hai Perso!")
+                //Bonus
                 //return così che quando faccio il click a una bomba si ferma e non va a sommare i punti
+                containerFlowers.style.zIndex = -1
                 return;
             }
 
@@ -68,6 +71,8 @@ btnGeneratorInput.addEventListener("click", function () {
             console.log(`Punti: ${sumPoints}`)
             if (sumPoints === numberBlockGenerator - 16) {
                 console.log("Hai Vinto")
+                containerFlowers.style.zIndex = -1;
+
                 alert("Hai Vinto!")
             }
         })
