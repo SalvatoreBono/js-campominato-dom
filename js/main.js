@@ -86,7 +86,7 @@ btnGeneratorInput.addEventListener("click", function () {
         //bombGenerator è un'array  vuota.".indexof" deve controllare i numeri non presenti quindi -1, e quindi pusha i numeri "bomb" non presenti.
         if (bombGenerator.indexOf(bomb) === -1) {
             bombGenerator.push(bomb)
-            //"i--" serve mentre per far continuare il ciclo se non vengono ritrovati numeri non trovati
+            //"i--" serve mentre per far continuare il ciclo se non vengono trovati numeri non trovati
         } else {
             i--
         }
