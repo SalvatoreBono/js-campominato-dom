@@ -1,0 +1,18 @@
+.container-flowers {
+    width: 800px;
+    margin: auto;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(127, 255, 212);
+    display: none;
+}
+
+.box-flowers {
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
