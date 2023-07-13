@@ -28,18 +28,7 @@ btnGeneratorInput.addEventListener("click", function () {
     //Ogni cella ha un numero progressivo, dato dalla select "numberBlockGenerator".
     for (let i = 1; i <= numberBlockGenerator; i++) {
 
-        //genererà i div virtuali.
-        const boxFlowers = document.createElement("div");
-
-        //viene data la classe creata nel css
-        boxFlowers.classList.add("box-flowers");
-
-        //stampa nel boxFlowers tutte le "i" che sono tutti i numeri
-        boxFlowers.innerHTML = i.toString();
-
-        //al boxFlowers dare un flex basiss con un "calc 100% / la radice dei numeri generati"
-        boxFlowers.style.flexBasis = `calc(100% / ${BlockGenerator})`;
-
+        const boxFlowers = creatorBlock(i, BlockGenerator);
         //collegare i div creati virtualmente
         containerFlowers.append(boxFlowers);
 
@@ -81,6 +70,25 @@ btnGeneratorInput.addEventListener("click", function () {
         })
     }
     /* Il computer deve generare 16 numeri casuali.  */
+    randomBomb(bombGenerator, numberBlockGenerator)
+})
+
+function creatorBlock(i, BlockGenerator) {
+    //genererà i div virtuali.
+    const boxFlowers = document.createElement("div");
+
+    //viene data la classe creata nel css
+    boxFlowers.classList.add("box-flowers");
+
+    //stampa nel boxFlowers tutte le "i" che sono tutti i numeri
+    boxFlowers.innerHTML = i.toString();
+
+    //al boxFlowers dare un flex basiss con un "calc 100% / la radice dei numeri generati"
+    boxFlowers.style.flexBasis = `calc(100% / ${BlockGenerator})`;
+    return boxFlowers;
+}
+
+function randomBomb(bombGenerator, numberBlockGenerator) {
     for (let i = 1; i <= 16; i++) {
         const bomb = Math.floor(Math.random() * numberBlockGenerator) + 1;
         //bombGenerator è un'array  vuota.".indexof" deve controllare i numeri non presenti quindi -1, e quindi pusha i numeri "bomb" non presenti.
@@ -92,4 +100,4 @@ btnGeneratorInput.addEventListener("click", function () {
         }
     }
     console.log(bombGenerator)
-})
+}
